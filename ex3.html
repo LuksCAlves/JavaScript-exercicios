@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js exercício 3</title>
+</head>
+<body>
+    <h2>Os objetos do elemento</h2>
+
+    <ul id="MyList">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Leite</li>
+    </ul>
+
+    <label for = "id_nova">Novo Elemento:</label>
+    <input type="text" id="id_nova">
+    <br>
+    
+    <input type="radio" name="cores" value="red" id="id_bt1">
+    <label for="id_bt1">Vermelho</label>
+
+    <input type="radio" name="cores" value="green" id="id_bt2">
+    <label for="id_bt2">Verde</label>
+
+    <input type="radio" name="cores" value="blue" id="id_bt3">
+    <label for="id_bt3">Azul</label>
+    <br>
+
+    <button id="bt1">Adicionar</button>
+
+    <script>
+        document.getElementById("bt1").addEventListener("click", myFunction)
+        function myFunction() {
+
+            const novo_elemento = document.getElementById('id_nova').value;
+
+            cor = document.querySelector('input[name="cores"]:checked').value;
+
+            const node = document.createElement("li");
+
+            const textnode = document.createTextNode(novo_elemento);
+
+            node.appendChild(textnode);
+            node.style.color = cor;
+
+            document.getElementById ("MyList").appendChild(node);
+
+        }
+    </script>
+    
+</body>
+</html>
